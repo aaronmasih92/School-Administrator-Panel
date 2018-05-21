@@ -92,10 +92,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
     
-    
-configure :production do
-  set :database, ENV["DATABASE_URL"]
-end
 
 
 end
