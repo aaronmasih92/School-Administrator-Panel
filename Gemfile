@@ -65,3 +65,6 @@ gem 'devise'
 
 gem 'rails_12factor', group: :production
 
+group :production do
+    gem 'pg'
+end
