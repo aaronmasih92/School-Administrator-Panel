@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  resources :cohorts_teachers
+  resources :cohorts_students
+devise_for :users, controllers: { registrations: "users/registrations"}
+
   resources :admins
   resources :cohorts
   resources :courses

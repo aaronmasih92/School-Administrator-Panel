@@ -10,13 +10,13 @@
       </ul>
     </div>
   <% end %>
-
+<div class="container text-center">
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
+  <div class="field ">
     <%= form.label :start_date %>
     <%= form.datetime_select :start_date %>
   </div>
@@ -31,7 +31,10 @@
     <%= form.number_field :course_id %>
   </div>
 
+
+
   <div class="actions">
     <%= form.submit %>
   </div>
+    </div>
 <% end %>

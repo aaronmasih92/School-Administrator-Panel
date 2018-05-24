@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+<div class="container text-center">
   <div class="field">
     <%= form.label :first_name %>
     <%= form.text_field :first_name %>
@@ -28,10 +28,17 @@
 
   <div class="field">
     <%= form.label :education %>
-    <%= form.text_field :education %>
+    <%= form.select :education, ["HS", "College", "Masters", "PH.D"] %>
+  </div>
+    
+    
+   <div class = "field">
+    <%= form.label :cohort %>
+    <%= form.collection_select(:cohort_id, Cohort.all, :id, :name) %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+    </div>
 <% end %>
