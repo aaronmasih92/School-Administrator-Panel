@@ -24,6 +24,10 @@
   <strong>Education:</strong>
   <%= @teacher.education %>
 </p>
+<p>
+  <strong>Cohort:</strong>
+  <%= Cohort.find(@teacher.cohort_id).name%>
+</p>
 
 <%= link_to 'Edit', edit_teacher_path(@teacher) %> |
 <%= link_to 'Back', teachers_path %>

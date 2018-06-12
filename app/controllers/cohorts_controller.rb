@@ -21,7 +21,8 @@ class CohortsController < ApplicationController
 
   # GET /cohorts/1/edit
   def edit
-          @teachers = Teacher.all
+        @teachers = Teacher.all
+        @cohorts_student = CohortsStudent.new
 
   end
 
@@ -55,6 +56,7 @@ class CohortsController < ApplicationController
         format.json { render json: @cohort.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # DELETE /cohorts/1
@@ -72,6 +74,7 @@ class CohortsController < ApplicationController
     def set_cohort
       @cohort = Cohort.find(params[:id])
     end
+    
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cohort_params

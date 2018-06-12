@@ -5,3 +5,9 @@
 <%= link_to 'Show', @cohort %> |
 <%= link_to 'Back', cohorts_path %>
 </div>
+
+<%= form_for :cohorts_student, method: :create do |f| %>
+  <%= f.collection_select(:student_id, Student.all, :id, :student_full_name) %>
+  <%= f.hidden_field(:cohort_id, value: "#{@cohort.id}") %>
+  <%= f.submit "Add Student to Cohort" %>
+<% end %>

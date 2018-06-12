@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   resources :cohorts_students
 devise_for :users, controllers: { registrations: "users/registrations"}
 
-  resources :admins
   resources :cohorts
   resources :courses
   resources :teachers
   resources :students
-  get 'welcome/index'
- 
-  root 'welcome#index'
+    
+   
+post "/cohorts/:id/edit", to: "cohorts_students#create"    
+  root "welcome#index"
 end

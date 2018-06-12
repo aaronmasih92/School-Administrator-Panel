@@ -35,6 +35,11 @@
     <%= form.label :education %>
     <%= form.select :education, ["HS", "College", "Masters", "PH.D"] %>
   </div>
+    
+  <div class="field">
+    <%= form.label :cohort_id %>
+    <%= form.select :cohort_id, Cohort.all.map { |cohort| [cohort.name, cohort.id] } %>
+  </div>
 
 
   <div class="actions">

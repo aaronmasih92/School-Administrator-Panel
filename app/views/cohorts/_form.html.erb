@@ -28,9 +28,8 @@
 
   <div class="field">
     <%= form.label :course_id %>
-    <%= form.number_field :course_id %>
+    <%= form.select :course_id, Course.all.map { |course| [course.name, course.id] } %>
   </div>
-
 
 
   <div class="actions">

@@ -17,9 +17,20 @@
 
 <p>
   <strong>Teacher:</strong>
-  <%= @cohort.teacher %>
+  <%if @cohort.teacher.nil?%>
+    <p>There is no assigned teacher </p>
+    link_to 'Assign a teacher', edit_cohort_path
+  <%else%>  
+    <%= @cohort.teacher.teacher_full_name %>
+  <% end %>  
 </p>
 
+<% @cohort.students.each do |student|%>
+  <p>
+    <%student.first_name%>
+    <%student.last_name%>
+  </p>
+<%end%>
 
 
 <%= link_to 'Edit', edit_cohort_path(@cohort) %> |
