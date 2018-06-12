@@ -28,7 +28,7 @@ class CohortsStudentsController < ApplicationController
 
     respond_to do |format|
       if @cohorts_student.save
-        format.html { redirect_to @cohorts_student, notice: 'Cohorts student was successfully created.' }
+        format.html { redirect_to cohort_path(@cohorts_student.cohort_id), notice: 'Cohorts student was successfully created.' }
         format.json { render :show, status: :created, location: @cohorts_student }
       else
         format.html { render :new }
